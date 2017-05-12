@@ -14,23 +14,23 @@ public abstract class EventFilter {
 	}
 	
 	public boolean check(Player p) {
-		return false;
+		return true;
 	}
 	
 	public boolean check(Location l) {
-		return false;
+		return true;
 	}
 	
 	public boolean check(Entity e) {
-		return false;
+		return true;
 	}
 	
 	public boolean check(Inventory i) {
-		return false;
+		return true;
 	}
 	
 	public boolean check(World w) {
-		return false;
+		return true;
 	}
 
 }
