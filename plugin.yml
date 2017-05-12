@@ -1,0 +1,9 @@
+name: CustomEventHandlerPlugin
+main: net.yzimroni.customeventhandler.CustomEventHandlerPlugin
+version: 0.1
+description: Custom event handler
+authors: [yzimroni]
+commands:
+  customeventhandler:
+    description: event
+    aliases: [ceh, ce, event]
