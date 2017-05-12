@@ -1,4 +1,4 @@
-package net.yzimroni.customeventhandler;
+package net.yzimroni.eventfilter;
 
 import org.bukkit.Location;
 import org.bukkit.World;

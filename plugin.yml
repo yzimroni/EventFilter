@@ -1,9 +1,9 @@
-name: CustomEventHandlerPlugin
-main: net.yzimroni.customeventhandler.CustomEventHandlerPlugin
+name: EventFilter
+main: net.yzimroni.eventfilter.plugin.EventFilterPlugin
 version: 0.1
-description: Custom event handler
+description: Event filter plugin
 authors: [yzimroni]
 commands:
-  customeventhandler:
-    description: event
-    aliases: [ceh, ce, event]
+  eventfilter:
+    description: event filter
+    aliases: [ef, filter, event]

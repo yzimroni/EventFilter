@@ -1,4 +1,4 @@
-package net.yzimroni.customeventhandler.custom;
+package net.yzimroni.eventfilter;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -13,15 +13,13 @@ import org.bukkit.event.player.PlayerEvent;
 import org.bukkit.event.world.WorldEvent;
 import org.bukkit.plugin.EventExecutor;
 
-import net.yzimroni.customeventhandler.EventFilter;
-
-public class CustomEventExecutor implements EventExecutor {
+public class FilteredEventExecutor implements EventExecutor {
 
 	private Method method;
 	private Class<?> eventClass;
 	private EventFilter filter;
 
-	public CustomEventExecutor(Method method, Class<?> eventClass, EventFilter filter) {
+	public FilteredEventExecutor(Method method, Class<?> eventClass, EventFilter filter) {
 		super();
 		this.method = method;
 		this.eventClass = eventClass;

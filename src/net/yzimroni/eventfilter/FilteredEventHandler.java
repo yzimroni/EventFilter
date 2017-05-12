@@ -1,4 +1,4 @@
-package net.yzimroni.customeventhandler.custom;
+package net.yzimroni.eventfilter;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -9,7 +9,7 @@ import org.bukkit.event.EventPriority;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface CustomEventHandler {
+public @interface FilteredEventHandler {
 	
 	EventPriority priority() default EventPriority.NORMAL;
 	boolean ignoreCancelled() default false;

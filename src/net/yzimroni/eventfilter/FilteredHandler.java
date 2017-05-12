@@ -1,4 +1,4 @@
-package net.yzimroni.customeventhandler;
+package net.yzimroni.eventfilter;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -16,12 +16,9 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredListener;
 import org.bukkit.plugin.TimedRegisteredListener;
 
-import net.yzimroni.customeventhandler.custom.CustomEventExecutor;
-import net.yzimroni.customeventhandler.custom.CustomEventHandler;
-
-public class CustomHandler implements Listener {
+public class FilteredHandler implements Listener {
 	
-	private CustomHandler() {
+	private FilteredHandler() {
 		
 	}
 	
@@ -58,7 +55,7 @@ public class CustomHandler implements Listener {
         }
         
         for (final Method method : methods) {
-            final CustomEventHandler eh = method.getAnnotation(CustomEventHandler.class);
+            final FilteredEventHandler eh = method.getAnnotation(FilteredEventHandler.class);
             if (eh == null) continue;
             // Do not register bridge or synthetic methods to avoid event duplication
             // Fixes SPIGOT-893
@@ -78,7 +75,7 @@ public class CustomHandler implements Listener {
                 ret.put(eventClass, eventSet);
             }
 
-            CustomEventExecutor executor = new CustomEventExecutor(method, eventClass, filter);
+            FilteredEventExecutor executor = new FilteredEventExecutor(method, eventClass, filter);
             if (useTimings) {
                 eventSet.add(new TimedRegisteredListener(listener, executor, eh.priority(), plugin, eh.ignoreCancelled()));
             } else {
