@@ -64,7 +64,7 @@ public class FilteredHandler implements Listener {
             }
             final Class<?> checkClass;
             if (method.getParameterTypes().length != 1 || !Event.class.isAssignableFrom(checkClass = method.getParameterTypes()[0])) {
-                plugin.getLogger().severe(plugin.getDescription().getFullName() + " attempted to register an invalid CustomEventHandler method signature \"" + method.toGenericString() + "\" in " + listener.getClass());
+                plugin.getLogger().severe(plugin.getDescription().getFullName() + " attempted to register an invalid FilteredEventHandler method signature \"" + method.toGenericString() + "\" in " + listener.getClass());
                 continue;
             }
             final Class<? extends Event> eventClass = checkClass.asSubclass(Event.class);

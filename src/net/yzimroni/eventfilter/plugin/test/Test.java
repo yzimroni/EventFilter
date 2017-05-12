@@ -18,7 +18,7 @@ public class Test implements Listener {
 		this.plugin = plugin;
 		FilteredHandler.registerEvents(this, plugin, new EventFilter() {
 			@Override
-			public boolean check(Player p) {
+			public boolean player(Player p) {
 				return p.getLocation().getY() < 70;
 			}
 		});

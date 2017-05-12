@@ -9,27 +9,27 @@ import org.bukkit.inventory.Inventory;
 
 public abstract class EventFilter {
 	
-	public boolean check(Event e) {
+	public boolean event(Event e) {
 		return true;
 	}
 	
-	public boolean check(Player p) {
+	public boolean player(Player p) {
 		return true;
 	}
 	
-	public boolean check(Location l) {
+	public boolean location(Location l) {
 		return true;
 	}
 	
-	public boolean check(Entity e) {
+	public boolean entity(Entity e) {
 		return true;
 	}
 	
-	public boolean check(Inventory i) {
+	public boolean inventory(Inventory i) {
 		return true;
 	}
 	
-	public boolean check(World w) {
+	public boolean world(World w) {
 		return true;
 	}
 
