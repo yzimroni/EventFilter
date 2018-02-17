@@ -54,7 +54,7 @@ public class FilteredEventExecutor implements EventExecutor {
 			throw new EventException(t);
 		}
 	}
-	
+
 	private boolean checkEvent(Event e) {
 		if (!filter.event(e)) {
 			return false;
@@ -76,7 +76,7 @@ public class FilteredEventExecutor implements EventExecutor {
 		}
 		return true;
 	}
-	
+
 	private boolean checkPlayer(Event e) {
 		if (e instanceof PlayerEvent) {
 			return filter.player(((PlayerEvent) e).getPlayer());
@@ -107,10 +107,10 @@ public class FilteredEventExecutor implements EventExecutor {
 				return filter.player((Player) ((InventoryInteractEvent) e).getWhoClicked());
 			}
 		}
-		//TODO
+		// TODO
 		return true;
 	}
-	
+
 	private boolean checkBlock(Event e) {
 		if (e instanceof BlockEvent) {
 			return filter.location(((BlockEvent) e).getBlock().getLocation());
@@ -118,10 +118,10 @@ public class FilteredEventExecutor implements EventExecutor {
 		if (e instanceof EntityChangeBlockEvent) {
 			return filter.location(((EntityChangeBlockEvent) e).getBlock().getLocation());
 		}
-		//TODO
+		// TODO
 		return true;
 	}
-	
+
 	private boolean checkInventory(Event e) {
 		if (e instanceof InventoryEvent) {
 			return filter.inventory(((InventoryEvent) e).getInventory());
@@ -129,10 +129,10 @@ public class FilteredEventExecutor implements EventExecutor {
 		if (e instanceof InventoryPickupItemEvent) {
 			return filter.inventory(((InventoryPickupItemEvent) e).getInventory());
 		}
-		//TODO
+		// TODO
 		return true;
 	}
-	
+
 	private boolean checkWorld(Event e) {
 		if (e instanceof WorldEvent) {
 			return filter.world(((WorldEvent) e).getWorld());
@@ -140,7 +140,7 @@ public class FilteredEventExecutor implements EventExecutor {
 		if (e instanceof WeatherEvent) {
 			return filter.world(((WeatherEvent) e).getWorld());
 		}
-		//TODO
+		// TODO
 		return true;
 	}
 

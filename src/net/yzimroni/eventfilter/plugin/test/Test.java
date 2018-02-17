@@ -11,11 +11,8 @@ import net.yzimroni.eventfilter.FilteredHandler;
 import net.yzimroni.eventfilter.plugin.EventFilterPlugin;
 
 public class Test implements Listener {
-	
-	private EventFilterPlugin plugin;
-	
+
 	public Test(EventFilterPlugin plugin) {
-		this.plugin = plugin;
 		FilteredHandler.registerEvents(this, plugin, new EventFilter() {
 			@Override
 			public boolean player(Player p) {
@@ -23,10 +20,11 @@ public class Test implements Listener {
 			}
 		});
 	}
-	
+
 	@FilteredEventHandler
 	public void onPlayerChat(AsyncPlayerChatEvent e) {
-		Bukkit.broadcastMessage(e.getPlayer() + " say something on y < 70");
+		// The method will be invoked only if the player is below 70 in the y-axis
+		Bukkit.broadcastMessage(e.getPlayer() + " said something on y < 70");
 	}
 
 }

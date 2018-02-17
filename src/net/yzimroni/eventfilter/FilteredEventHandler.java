@@ -10,8 +10,9 @@ import org.bukkit.event.EventPriority;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface FilteredEventHandler {
-	
+
 	EventPriority priority() default EventPriority.NORMAL;
+
 	boolean ignoreCancelled() default false;
 
 }
